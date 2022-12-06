@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function AppointmentPage() {
+export default function AppointmentPage({appointments, addAppointment}) {
     const handleSubmit = (e) => {
         e.preventDefault();
         
