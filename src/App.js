@@ -1,5 +1,5 @@
 import './App.css';
-import { NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, RedirectFunction, NavLink } from 'react-router-dom';
 
 function App() {
   const ROUTES = {
