@@ -13,21 +13,21 @@ function App() {
     APPIONTMENTS: "/appointments",
   };
   const addContact = (name, phone, email) => {
-    setContacts(contacts => [...contacts, {
+    setContacts(contacts => [ {
       name: name,
       phone: phone,
       email: email,
-    }]);
+    }, ...contacts]);
   }
 
   const addAppointment = (title, contact, date, time) => {
-    setAppointments(appointments => [...appointments,
+    setAppointments(appointments => [
     {
       title: title,
       contact: contact,
       date: date,
       time: time,
-    }]);
+    }, ...appointments,]);
   }
 
   return (

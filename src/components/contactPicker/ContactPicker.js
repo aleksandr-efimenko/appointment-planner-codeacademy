@@ -4,7 +4,6 @@ export default function ContactPicker({contacts, handleChange}) {
   const handlePickContact = (e) => {
     handleChange(e.target.value);
   }
-  // console.log(contacts);
   return (
     <div>
       <select name='contacts' onChange={handlePickContact}>

@@ -12,7 +12,7 @@ export default function ContactForm(
   }
 ) {
   const handleSubmitForm = (e) => {
-    e.prevendDefaul();
+    e.preventDefault();
     handleSubmit();
   }
   const onNameChange = (e) => {
@@ -29,13 +29,13 @@ export default function ContactForm(
     <div>
       <form onSubmit={handleSubmitForm}>
         <label>Name
-          <input type='text' value={name} onChange={onNameChange} />
+          <input type='text' required value={name} onChange={onNameChange} />
         </label>
-        <label>Phone
-          <input type='tel' value={phone} onChange={onPhoneChange} />
+        <label>Phone (must contain 5-15 digits only)
+          <input type='tel' pattern='[0-9]{5,15}' required value={phone} onChange={onPhoneChange} />
         </label>
         <label>Email
-          <input type='email' value={email} onChange={onEmailChange} />
+          <input type='email' required value={email} onChange={onEmailChange} />
         </label>
         <input type='submit' />
       </form>
