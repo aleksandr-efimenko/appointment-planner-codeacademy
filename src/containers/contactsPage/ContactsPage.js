@@ -7,8 +7,7 @@ export default function ContactPage({contacts, addContact}) {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [isDuplicateName, setIsDuplicateName] = useState(false);
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = () => {
         if (!isDuplicateName) {
             addContact(name, phone, email);
             setName('');

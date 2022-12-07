@@ -11,6 +11,10 @@ export default function ContactForm(
     handleSubmit
   }
 ) {
+  const handleSubmitForm = (e) => {
+    e.prevendDefaul();
+    handleSubmit();
+  }
   const onNameChange = (e) => {
     setName(e.target.value);
   }
@@ -23,8 +27,7 @@ export default function ContactForm(
   }
   return (
     <div>
-      <h3>Contact Form</h3>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmitForm}>
         <label>Name
           <input type='text' value={name} onChange={onNameChange} />
         </label>

@@ -5,10 +5,8 @@ export default function TileList({ list }) {
   return (
     <div>
       {
-        list.map(el => (
-          <>
-            <Tile obj={el} key={el.id} />
-          </>
+        list.map((el, index) => (
+          <Tile obj={el} key={index} />
         ))
       }
     </div>
