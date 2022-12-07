@@ -5,7 +5,7 @@ import ContactPage from './containers/contactsPage/ContactsPage';
 
 
 function App() {
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState([{name: 'a', phone: 12, email: 'aa@aa.com'}]);
   const [appointments, setAppointments] = useState([]);
   const ROUTES = {
     CONTACTS: "/contacts",
@@ -15,7 +15,8 @@ function App() {
     setContacts(contacts => [...contacts, {
       name: name, 
       phone: phone, 
-      email: email
+      email: email,
+      id: (new Date()).valueOf()
     }]);
   }
 
@@ -25,7 +26,8 @@ function App() {
         title: title,
         contact: contact,
         date: date,
-        time: time
+        time: time,
+        id: (new Date()).valueOf()
       }]);
   }
 

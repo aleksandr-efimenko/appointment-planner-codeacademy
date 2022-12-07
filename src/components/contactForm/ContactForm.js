@@ -18,9 +18,9 @@ export default function ContactForm(
     setPhone(e.target.value);
   }
   const onEmailChange = (e) => {
+    const pattern = "[1-9][0-9]{2}-[1-9][0-9]{2}-[0-9]{4}";
     setEmail(e.target.value);
   }
-  const pattern = "[1-9][0-9]{2}-[1-9][0-9]{2}-[0-9]{4}";
   return (
     <div>
       <h3>Contact Form</h3>

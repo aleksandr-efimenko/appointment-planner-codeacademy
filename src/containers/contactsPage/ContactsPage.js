@@ -39,7 +39,7 @@ export default function ContactPage({contacts, addContact}) {
             <hr />
             <section>
                 <h2>Contacts</h2>
-                <TileList contacts={contacts} />
+                <TileList list={contacts} />
             </section>
         </div>
     )
