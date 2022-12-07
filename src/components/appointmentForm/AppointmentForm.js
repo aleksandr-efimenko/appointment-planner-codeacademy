@@ -18,16 +18,16 @@ export default function AppointmentForm({ title, setTitle, date, setDate, time, 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label><p>Contact</p>
+        <label>Contact
           <ContactPicker contact={contact} contacts={contacts} handleChange={onContactChange} />
         </label>
-        <label><p>Title</p>
+        <label>Title
           <input type='text' required onChange={onTitleChange} value={title} />
         </label>
-        <label><p>Date</p>
+        <label>Date
           <input type='date' required onChange={onDateChange} value={date} />
         </label>
-        <label><p>Time</p>
+        <label>Time
           <input type='time' required onChange={onTimeChange} value={time} />
         </label>
         <input type='submit' />

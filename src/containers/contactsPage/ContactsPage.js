@@ -22,7 +22,7 @@ export default function ContactPage({contacts, addContact}) {
         } else {
             setIsDuplicateName(false);
         }
-    }, [name])
+    }, [name, contacts])
     return (
         <div>
             <section>

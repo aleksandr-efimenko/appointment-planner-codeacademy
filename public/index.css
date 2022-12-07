@@ -4,7 +4,9 @@
 }
 
 main {
-  width: 40%;
+  min-width: 400px;
+  width: 40vw;
+  margin: auto;
 }
 
 nav>a {
@@ -73,6 +75,7 @@ input[type="submit"] {
     outline: none;
     width: 100%;
     margin-bottom: 10px;
+    margin-top: 5px;
     box-sizing: border-box;
   }
   
