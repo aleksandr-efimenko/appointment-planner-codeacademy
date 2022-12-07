@@ -10,8 +10,8 @@ export default function AppointmentPage({appointments, contacts, addAppointment}
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(!title || !contact || !date || !time) {
-            console.log(e.target.value)
+        if(!contact) {
+            alert('Please choose contact from the list');
             return;
         }
         addAppointment(title, contact, date, time);

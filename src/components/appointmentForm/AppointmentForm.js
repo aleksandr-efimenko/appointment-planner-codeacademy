@@ -1,7 +1,7 @@
 import React from 'react'
 import ContactPicker from '../contactPicker/ContactPicker'
 
-export default function AppointmentForm({ title, setTitle, date, setDate, time, setTime, contacts, setContact, handleSubmit }) {
+export default function AppointmentForm({ title, setTitle, date, setDate, time, setTime, contacts, contact, setContact, handleSubmit }) {
   const onTitleChange = (e) => {
     setTitle(e.target.value);
   }
@@ -19,16 +19,16 @@ export default function AppointmentForm({ title, setTitle, date, setDate, time, 
     <div>
       <form onSubmit={handleSubmit}>
         <label>Contact
-          <ContactPicker contacts={contacts} handleChange={onContactChange} />
+          <ContactPicker contact={contact} contacts={contacts} handleChange={onContactChange} />
         </label>
         <label>Title
-          <input type='text' onChange={onTitleChange} value={title} />
+          <input type='text' required onChange={onTitleChange} value={title} />
         </label>
         <label>Date
-          <input type='date' onChange={onDateChange} value={date} />
+          <input type='date' required onChange={onDateChange} value={date} />
         </label>
         <label>Time
-          <input type='time' onChange={onTimeChange} value={time} />
+          <input type='time' required onChange={onTimeChange} value={time} />
         </label>
         <input type='submit' />
       </form>
