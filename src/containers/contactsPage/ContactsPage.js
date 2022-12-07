@@ -17,8 +17,10 @@ export default function ContactPage({contacts, addContact}) {
     }
     useEffect(() => 
     {
-        if (contacts.some(el => el.name === name)) {
+        if (contacts.some(el => el.name.toLowerCase() === name.toLocaleLowerCase())) {
             setIsDuplicateName(true);
+        } else {
+            setIsDuplicateName(false);
         }
     }, [name])
     return (
@@ -33,6 +35,7 @@ export default function ContactPage({contacts, addContact}) {
                     setPhone={setPhone}
                     email={email}
                     setEmail={setEmail}
+                    isDuplicateName={isDuplicateName}
                 />
             </section>
             <hr />

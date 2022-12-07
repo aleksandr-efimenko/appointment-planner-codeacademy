@@ -12,6 +12,7 @@ export default function ContactPicker({contacts, contact, handleChange}) {
         name='contacts' 
         value={contact}
         onChange={handlePickContact}
+        required
       >
         <option 
           key={(new Date()).valueOf()} 

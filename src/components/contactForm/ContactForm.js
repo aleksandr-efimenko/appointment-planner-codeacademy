@@ -8,7 +8,8 @@ export default function ContactForm(
     setPhone,
     email,
     setEmail,
-    handleSubmit
+    handleSubmit,
+    isDuplicateName
   }
 ) {
   const handleSubmitForm = (e) => {
@@ -37,7 +38,11 @@ export default function ContactForm(
         <label>Email
           <input type='email' required value={email} onChange={onEmailChange} />
         </label>
-        <input type='submit' />
+        <input 
+          type='submit' 
+          disabled={isDuplicateName} 
+          value={isDuplicateName ? 'Please enter another name' : 'Submit'} 
+        />
       </form>
     </div>
   )
