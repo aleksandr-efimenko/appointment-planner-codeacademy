@@ -29,13 +29,13 @@ export default function ContactForm(
   return (
     <div>
       <form onSubmit={handleSubmitForm}>
-        <label>Name
+        <label><p>Name</p>
           <input type='text' required value={name} onChange={onNameChange} />
         </label>
-        <label>Phone (must contain 5-15 digits only)
+        <label><p>Phone (must contain 5-15 digits only)</p>
           <input type='tel' pattern='[0-9]{5,15}' required value={phone} onChange={onPhoneChange} />
         </label>
-        <label>Email
+        <label><p>Email</p>
           <input type='email' required value={email} onChange={onEmailChange} />
         </label>
         <input 

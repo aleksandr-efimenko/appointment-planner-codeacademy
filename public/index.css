@@ -3,6 +3,10 @@
     font-family: "Open Sans", sans-serif;
 }
 
+main {
+  width: 40%;
+}
+
 nav>a {
     font-size: normal;
     font-weight: normal;
@@ -56,6 +60,7 @@ input[type="submit"] {
   }
   input:disabled {
     background: #979797;
+    cursor: not-allowed;
   }
   
   input,
