@@ -5,8 +5,8 @@ import ContactPage from './containers/contactsPage/ContactsPage';
 
 function App() {
   const [contacts, setContacts] = useState([
-    // { name: 'Mike', phone: '1231412', email: 'aa@aa.com' },
-    // { name: 'John', phone: '1213312', email: 'bb@bb.com' }
+    { name: 'Mike', phone: '1231412', email: 'aa@aa.com', id: 10 },
+    { name: 'John', phone: '1213312', email: 'bb@bb.com', id: 15 }
   ]);
   const [appointments, setAppointments] = useState([]);
   const ROUTES = {
