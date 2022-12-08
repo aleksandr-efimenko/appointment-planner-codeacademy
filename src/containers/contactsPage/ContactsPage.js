@@ -2,11 +2,12 @@ import React, {useState, useEffect} from 'react'
 import ContactForm from '../../components/contactForm/ContactForm';
 import TileList from '../../components/tileList/TileList';
 
-export default function ContactPage({contacts, addContact}) {
+export default function ContactPage({contacts, addContact, deleteObj}) {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [isDuplicateName, setIsDuplicateName] = useState(false);
+
     const handleSubmit = () => {
         if (!isDuplicateName) {
             addContact(name, phone, email);
@@ -41,7 +42,7 @@ export default function ContactPage({contacts, addContact}) {
             <hr />
             <section>
                 <h2>Contacts</h2>
-                <TileList list={contacts} />
+                <TileList deleteObj={deleteObj} list={contacts} />
             </section>
         </div>
     )

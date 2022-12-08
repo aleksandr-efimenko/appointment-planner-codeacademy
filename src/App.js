@@ -5,8 +5,8 @@ import ContactPage from './containers/contactsPage/ContactsPage';
 
 function App() {
   const [contacts, setContacts] = useState([
-    { name: 'Mike', phone: '1231412', email: 'aa@aa.com', id: 10 },
-    { name: 'John', phone: '1213312', email: 'bb@bb.com', id: 15 }
+    // { name: 'Mike', phone: '1231412', email: 'aa@aa.com', id: 10 },
+    // { name: 'John', phone: '1213312', email: 'bb@bb.com', id: 15 }
   ]);
   const [appointments, setAppointments] = useState([]);
   const ROUTES = {
@@ -18,7 +18,12 @@ function App() {
       name: name,
       phone: phone,
       email: email,
+      id: (new Date()).valueOf()
     }, ...contacts]);
+  }
+
+  const deleteContact = (id) => {
+    setContacts(contacts.filter(el => el.id !== id));
   }
 
   const addAppointment = (title, contact, date, time) => {
@@ -28,7 +33,12 @@ function App() {
       contact: contact,
       date: date,
       time: time,
+      id: (new Date()).valueOf()
     }, ...appointments,]);
+  }
+
+  const deleteAppointment = (id) => {
+    setAppointments(appointments.filter(el => el.id !== id));
   }
 
   return (
@@ -59,6 +69,7 @@ function App() {
               {<ContactPage
                 contacts={contacts}
                 addContact={addContact}
+                deleteObj={deleteContact}
               />} />
             <Route
               path={ROUTES.APPIONTMENTS}
@@ -67,6 +78,7 @@ function App() {
                 contacts={contacts.map(e => e.name)}
                 appointments={appointments}
                 addAppointment={addAppointment}
+                deleteObj={deleteAppointment}
               />}
             />
             <Route

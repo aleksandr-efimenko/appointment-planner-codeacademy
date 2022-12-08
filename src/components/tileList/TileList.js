@@ -1,12 +1,12 @@
 import React from 'react'
 import Tile from '../tile/Tile';
 
-export default function TileList({ list }) {
+export default function TileList({ list, deleteObj }) {
   return (
     <div>
       {
-        list.map((el, index) => (
-          <Tile obj={el} key={index} />
+        list.map(el => (
+          <Tile deleteObj={deleteObj} obj={el} key={el.id} />
         ))
       }
     </div>
