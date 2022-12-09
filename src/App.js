@@ -3,18 +3,20 @@ import { BrowserRouter, Route, Routes, NavLink, Navigate } from 'react-router-do
 import AppointmentsPage from './containers/appointmentPage/AppointmentPage';
 import ContactPage from './containers/contactsPage/ContactsPage';
 
+const mockContacts = [
+  { name: 'Mike', phone: '1231412', email: 'aa@aa.com', id: 10 },
+  { name: 'John', phone: '1213312', email: 'bb@bb.com', id: 15 }
+];
+
 function App() {
-  const [contacts, setContacts] = useState([
-    // { name: 'Mike', phone: '1231412', email: 'aa@aa.com', id: 10 },
-    // { name: 'John', phone: '1213312', email: 'bb@bb.com', id: 15 }
-  ]);
+  const [contacts, setContacts] = useState([]);
   const [appointments, setAppointments] = useState([]);
   const ROUTES = {
     CONTACTS: "/contacts",
     APPIONTMENTS: "/appointments",
   };
   const addContact = (name, phone, email) => {
-    setContacts(contacts => [ {
+    setContacts(contacts => [{
       name: name,
       phone: phone,
       email: email,
@@ -28,13 +30,13 @@ function App() {
 
   const addAppointment = (title, contact, date, time) => {
     setAppointments(appointments => [
-    {
-      title: title,
-      contact: contact,
-      date: date,
-      time: time,
-      id: (new Date()).valueOf()
-    }, ...appointments,]);
+      {
+        title: title,
+        contact: contact,
+        date: date,
+        time: time,
+        id: (new Date()).valueOf()
+      }, ...appointments,]);
   }
 
   const deleteAppointment = (id) => {
